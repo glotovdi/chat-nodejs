@@ -42,7 +42,8 @@ gulp.task(
       },
       port: 8080,
       open: true,
-      notify: false
+      notify: false,
+      ghostMode: false
     });
   })
 );
