@@ -4,15 +4,22 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "backend": "nodemon backend/server.js",
-    "frontend": "cd frontend && gulp"
+    "learna-start": "./node_modules/.bin/lerna",
+    "start": "yarn learna-start run start"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "frontend",
+      "backend"
+    ]
+  },
   "devDependencies": {
-    "nodemon": "^1.19.1",
-    "gulp": "^4.0.2"
+    "lerna": "^3.5.1",
+    "gulp": "^4.0.2",
+    "nodemon": "^1.19.1"
   }
 }
