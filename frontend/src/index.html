@@ -9,11 +9,19 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <input id="text" type="text" />
-    <button id="add">ADD</button>
-    <h1>clients</h1>
-    <div class="wrapper"></div>
-    <h1>Chat</h1>
-    <div class="chat"></div>
+    <aside>
+      <div class="user_wrapper">
+        <div class="user__logo"></div>
+        <div id="name" class="user__name"></div>
+      </div>
+      <h1 id="clients_header">Участники</h1>
+      <div class="clients_wrapper"></div>
+    </aside>
+    <div class="content">
+      <div class="chat_wrapper">
+        <div class="chat"></div>
+      </div>
+      <div class="input_wrapper"><input id="text" type="text" /> <button id="add">ADD</button></div>
+    </div>
   </body>
 </html>

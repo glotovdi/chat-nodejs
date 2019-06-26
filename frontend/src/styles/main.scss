@@ -1,0 +1,51 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  padding: 0;
+  margin: 0;
+}
+aside {
+  background: #fb8b67;
+  padding: 30px;
+  color: white;
+}
+.user__logo {
+  background: white;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.user_wrapper {
+  height: 80px;
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  grid-gap: 20px;
+  align-items: center;
+  font-weight: 600;
+  font-size: 20px;
+}
+.clients_wrapper {
+  margin-left: 20px;
+}
+.content {
+  display: grid;
+  grid-template-rows: 1fr 90px;
+}
+.input_wrapper {
+  display: grid;
+  grid-template-columns: 1fr 200px;
+  padding: 20px;
+  grid-gap: 20px;
+}
+#text {
+  border-radius: 50px;
+  font-size: 20px;
+  padding-left: 20px;
+}
+#add {
+  border-radius: 50px;
+  background: #fb8b67;
+  color: white;
+}

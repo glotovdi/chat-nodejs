@@ -2,14 +2,18 @@ var name = prompt('Ваше имя');
 
 var socket = new WebSocket('ws://localhost:8081');
 var button = document.querySelector('#add');
-var wrapper = document.querySelector('.wrapper');
+var clients_wrapper = document.querySelector('.clients_wrapper');
 var chat = document.querySelector('.chat');
 var textarea = document.querySelector('#text');
+var name_wrapper = document.querySelector('#name');
+var clients_header = document.querySelector('#clients_header');
 socket.onopen = function() {
   console.log('Соединение установлено.');
   sendOnServer('name', name);
 };
-
+if (name) {
+  name_wrapper.innerHTML = name;
+}
 socket.onclose = function(event) {
   if (event.wasClean) {
     alert('Соединение закрыто чисто');
@@ -38,9 +42,10 @@ socket.onerror = function(error) {
 function clientsRender(clients) {
   var content = '';
   clients.forEach(element => {
-    content += `<div>${element.id} ${element.name ? element.name : ''}</div>`;
+    content += `<div>${element.name ? element.name : ''}</div>`;
   });
-  wrapper.innerHTML = content;
+  clients_wrapper.innerHTML = content;
+  clients_header.innerHTML = `Участники (${clients.length})`;
 }
 
 function sendOnServer(type, payload) {
