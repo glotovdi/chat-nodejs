@@ -6,7 +6,6 @@ var avatarImage = document.querySelector('#avatarImage');
 var authPopup = document.querySelector('#authPopup');
 var authBtn = document.querySelector('#authBtn');
 var fileLoadPopup = document.querySelector('#fileLoadPopup');
-var image = document.querySelector('#image');
 var chat = document.querySelector('.chat');
 var textarea = document.querySelector('#messageText');
 var sendBtn = document.querySelector('#sendBtn');
