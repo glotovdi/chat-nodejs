@@ -1,28 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Чат NODE JS</title>
-    <script async="defer" src="index.js"></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+    <script async="defer" src="index.js"></script>
+    <title>Chat</title>
   </head>
   <body>
-    <aside>
-      <div class="user_wrapper">
-        <div id="logo" class="user__logo"></div>
-        <div id="name" class="user__name"></div>
+    <div class="container">
+      <div class="row">
+        <div class="users">
+          <div class="users__block">
+            <div class="users__block_title">
+              <div class="users__block_img" id="loadPhoto">
+                <img class="users__block_image" src="" id="avatarImage" />
+                <span class="no_photo">No photo</span>
+              </div>
+              <h3 class="users__block_name">Добро пожаловать!</h3>
+            </div>
+            <h4 id="clients_header" class="users__block_members">Участники</h4>
+            <ul class="users__block_list" id="usersList"></ul>
+          </div>
+        </div>
+        <div class="message">
+          <div class="message__container">
+            <ul class="message__list" id="messages"></ul>
+          </div>
+          <div class="message__form">
+            <input
+              type="text"
+              name="message"
+              class="message__form_input"
+              id="messageText"
+              placeholder="Введите сообщение"
+            />
+            <button class="message__form_btn button-o" id="sendBtn">Отправить</button>
+          </div>
+        </div>
       </div>
-      <h1 id="clients_header">Участники</h1>
-      <div class="clients_wrapper"></div>
-    </aside>
-    <div class="content">
-      <div class="chat_wrapper">
-        <div class="chat"></div>
-        <div id="dropZone" style="width: 100px; height: 100px; background-color: red"></div>
+    </div>
+    <div class="authorization__modal" id="authPopup">
+      <h3 class="authorization__modal_title">Авторизация</h3>
+      <div class="authorization__modal_block">
+        <input type="text" placeholder="Введите ник" class="authorization__modal_input" id="nickname" />
+        <button class="authorization__modal_btn button-o" id="authBtn">Войти</button>
       </div>
-      <div class="input_wrapper"><input id="text" type="text" /> <button id="add">ADD</button></div>
+    </div>
+
+    <div class="fileload__modal" id="fileLoadPopup">
+      <h4 class="fileload__modal_title">Загрузка фото</h4>
+      <div class="fileload__modal_block">
+        <div class="droparea" id="droparea">
+          <img src="" id="image" class="image_input" />
+          <label for="inputFile" id="drop-area"></label>
+        </div>
+        <div class="fileload__modal_buttons">
+          <button class="button-o" id="cancel">Отмена</button>
+          <button class="button-o" id="sendPhoto">Загрузить</button>
+        </div>
+      </div>
     </div>
   </body>
 </html>

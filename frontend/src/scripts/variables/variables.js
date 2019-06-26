@@ -1,0 +1,15 @@
+var socket = new WebSocket('ws://localhost:8081');
+var nickname = document.querySelector('#nickname');
+var usersList = document.querySelector('#usersList');
+var loadPhoto = document.querySelector('#loadPhoto');
+var avatarImage = document.querySelector('#avatarImage');
+var authPopup = document.querySelector('#authPopup');
+var authBtn = document.querySelector('#authBtn');
+var fileLoadPopup = document.querySelector('#fileLoadPopup');
+var image = document.querySelector('#image');
+var chat = document.querySelector('.chat');
+var textarea = document.querySelector('#messageText');
+var sendBtn = document.querySelector('#sendBtn');
+var dropZone = document.querySelector('#droparea');
+var sendPhoto = document.querySelector('#sendPhoto');
+var clients_header = document.querySelector('#clients_header');

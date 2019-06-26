@@ -7,7 +7,7 @@ var concat = require('gulp-concat');
 var paths = {
   html: ['src/index.html'],
   css: ['src/styles/*.scss'],
-  script: ['src/scripts/*.js']
+  script: ['src/scripts/variables/*.js','src/scripts/*.js']
 };
 
 gulp.task(
@@ -53,6 +53,7 @@ gulp.task(
   gulp.series(function() {
     return gulp
       .src(paths.script)
+      .pipe(concat('index.js'))
       .pipe(gulp.dest('dist'))
       .pipe(reload({ stream: true }));
   })
