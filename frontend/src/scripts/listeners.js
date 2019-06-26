@@ -17,9 +17,14 @@ sendPhoto.addEventListener('click', () => {
 
 authBtn.addEventListener('click', () => {
   socket.send(JSON.stringify({ type: 'name', payload: nickname.value }));
-  authPopup.style.display = 'none';
+  closeUploadPhotoPopUp();
 });
 
 loadPhoto.addEventListener('click', () => {
   fileLoadPopup.style.display = 'block';
 });
+cancel_button.addEventListener('click', () => closeUploadPhotoPopUp());
+
+function closeUploadPhotoPopUp() {
+  authPopup.style.display = 'none';
+}

@@ -1,12 +1,10 @@
 dropZone.addEventListener('dragover', function(e) {
-  e.stopPropagation();
-  e.preventDefault();
+  stopDefaultEvents();
   e.dataTransfer.dropEffect = 'copy';
 });
 
 dropZone.addEventListener('drop', function(e) {
-  e.stopPropagation();
-  e.preventDefault();
+  stopDefaultEvents();
   var files = e.dataTransfer.files;
   for (var i = 0, file; (file = files[i]); i++) {
     if (file.type.match(/image.*/)) {
@@ -23,3 +21,8 @@ dropZone.addEventListener('drop', function(e) {
     }
   }
 });
+
+function stopDefaultEvents() {
+  e.stopPropagation();
+  e.preventDefault();
+}
