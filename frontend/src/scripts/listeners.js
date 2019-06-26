@@ -7,12 +7,17 @@ sendBtn.addEventListener('click', () => {
 });
 
 sendPhoto.addEventListener('click', () => {
+  const data = image.getAttribute('src');
+  if (!data) {
+    fileLoadPopup.hide();
+    return;
+  }
   avatarImage.src = image.getAttribute('src');
   avatarImage.style.width = `100%`;
   avatarImage.style.height = `100%`;
-  avatarImage.style.display = 'block';
+  avatarImage.show();
   avatarImage.parentElement.replaceChild(avatarImage, avatarImage.nextElementSibling);
-  fileLoadPopup.style.display = 'none';
+  fileLoadPopup.hide();
 });
 
 authBtn.addEventListener('click', () => {
@@ -20,15 +25,13 @@ authBtn.addEventListener('click', () => {
     return;
   }
   socket.send(JSON.stringify({ type: 'name', payload: nickname.value }));
-  closeUploadPhotoPopUp();
-  container.style.display = 'block';
+
+  authPopup.hide();
+  container.show();
 });
 
 loadPhoto.addEventListener('click', () => {
-  fileLoadPopup.style.display = 'block';
+  fileLoadPopup.show();
 });
-cancel_button.addEventListener('click', () => closeUploadPhotoPopUp());
 
-function closeUploadPhotoPopUp() {
-  authPopup.style.display = 'none';
-}
+cancel_button.addEventListener('click', () => fileLoadPopup.hide());
