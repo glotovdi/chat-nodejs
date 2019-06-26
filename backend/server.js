@@ -47,3 +47,10 @@ function sendMessage(id, payload) {
   var message = { ...sourceClientName, message: payload };
   broadcast('newMessage', message);
 }
+
+function dragOverHandler(ev) {
+  console.log('File(s) in drop zone');
+
+  // Prevent default behavior (Prevent file from being opened)
+  ev.preventDefault();
+}
