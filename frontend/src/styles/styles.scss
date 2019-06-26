@@ -90,20 +90,24 @@ body {
 .message__form {
   position: fixed;
   bottom: 20px;
-  width: 100%;
+  width: calc(100% - 272px);
+  display: flex;
+  padding: 0 15px;
+  box-sizing: border-box;
 }
 
 .message__form_input {
   display: inline-block;
-  margin-left: 15px;
+
   margin-top: 2px;
   padding: 3px;
-  width: 68%;
   height: 32px;
   border-radius: 5px;
   outline: none;
   border: 1px solid #a9a8a9;
   font-size: 13px;
+  margin-right: 20px;
+  flex: 1;
 }
 
 .message__form_input-error {
@@ -114,6 +118,8 @@ body {
 .message__form_btn {
   padding: 8px 20px;
   border-radius: 15px;
+  margin-right: 0;
+  margin-left: 0;
 }
 
 .authorization__modal {
@@ -324,4 +330,7 @@ body {
 }
 .time {
   text-align: center;
+}
+input[type='text'] {
+  padding-left: 15px;
 }
