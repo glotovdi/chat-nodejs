@@ -16,8 +16,12 @@ sendPhoto.addEventListener('click', () => {
 });
 
 authBtn.addEventListener('click', () => {
+  if (!nickname.value) {
+    return;
+  }
   socket.send(JSON.stringify({ type: 'name', payload: nickname.value }));
   closeUploadPhotoPopUp();
+  container.style.display = 'block';
 });
 
 loadPhoto.addEventListener('click', () => {

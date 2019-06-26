@@ -14,3 +14,4 @@ var dropZone = document.querySelector('#droparea');
 var sendPhoto = document.querySelector('#sendPhoto');
 var clients_header = document.querySelector('#clients_header');
 var cancel_button = document.querySelector('#cancel');
+var container = document.querySelector('.container');

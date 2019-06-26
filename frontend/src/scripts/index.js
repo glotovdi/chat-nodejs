@@ -13,7 +13,7 @@ function sendOnServer(type, payload) {
 
 function addNewMessage(message) {
   var el = document.createElement('div');
-  el.innerHTML = `<li><h3>${message.name}</h3><div>${message.message.date.toHHMMSS()} ${
+  el.innerHTML = `<li><h3 class="message_nickname">${message.name}</h3><div>${message.message.date.toHHMMSS()} ${
     message.message.text
   }</div></li>`;
   messages.appendChild(el);

@@ -10,6 +10,7 @@ body {
   width: 100%;
   margin: 0;
   padding: 0;
+  display: none;
 }
 
 .users {
@@ -279,4 +280,7 @@ body {
   display: block;
 
   overflow: hidden;
+}
+.message_nickname {
+  margin-left: 64px;
 }
