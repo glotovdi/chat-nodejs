@@ -1,4 +1,4 @@
 ## Установка зависимостей
 `npm/yarn install`
 ## Запуск приложения
-`npm run-sctipt start`
+`npm run-script start`
