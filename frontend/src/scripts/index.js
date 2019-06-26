@@ -1,7 +1,14 @@
 function clientsRender(clients) {
+  console.log(clients);
   var content = '';
   clients.forEach(element => {
-    content += `<li>${element.name ? element.name : ''}</li>`;
+    var elementHtml = `<li class="users_item"><img class="user_avatar" src="${element.image}">${
+      element.name ? element.name : ''
+    }</li>`;
+    if (!element.image) {
+      elementHtml = `<li class="users_item">${element.name ? element.name : ''}</li>`;
+    }
+    content += elementHtml;
   });
   usersList.innerHTML = content;
   clients_header.innerHTML = `Участники (${clients.length})`;
@@ -13,8 +20,15 @@ function sendOnServer(type, payload) {
 
 function addNewMessage(message) {
   var el = document.createElement('div');
-  el.innerHTML = `<li><h3 class="message_nickname">${message.name}</h3><div>${message.message.date.toHHMMSS()} ${
-    message.message.text
-  }</div></li>`;
+  el.innerHTML = `<li class="message_item"><div class="img_wrapper"></div><h3 class="message_nickname">${
+    message.name
+  }</h3><div  class="time">${message.message.date.toHHMMSS()}</div><div> ${message.message.text}</div></li>`;
+  if (message.image) {
+    el.innerHTML = `<li class="message_item"><div class="img_wrapper"><img class="user_avatar_message" src="${
+      message.image
+    }"></div><h3 class="message_nickname">${
+      message.name
+    }</h3><div class="time">${message.message.date.toHHMMSS()}</div> <div>${message.message.text}</div></li>`;
+  }
   messages.appendChild(el);
 }

@@ -12,6 +12,7 @@ sendPhoto.addEventListener('click', () => {
     fileLoadPopup.hide();
     return;
   }
+  sendOnServer('addImage', image.getAttribute('src'));
   avatarImage.src = image.getAttribute('src');
   avatarImage.style.width = `100%`;
   avatarImage.style.height = `100%`;

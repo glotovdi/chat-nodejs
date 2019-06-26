@@ -23,6 +23,9 @@ webSocketServer.on('connection', function(ws) {
       case 'addNewMessage':
         sendMessage(id, message.payload);
         return;
+      case 'addImage':
+        addImage(id, message.payload);
+        return;
     }
   });
 
@@ -41,15 +44,13 @@ function setName(id, payload) {
   clients.find(client => client.id === id).name = payload;
   broadcast('updateClients', clients);
 }
+function addImage(id, payload) {
+  clients.find(client => client.id === id).image = payload;
+  broadcast('updateClients', clients);
+}
 
 function sendMessage(id, payload) {
   var sourceClientName = clients.find(client => client.id === id);
   var message = { ...sourceClientName, message: payload };
   broadcast('newMessage', message);
-}
-
-function dragOverHandler(ev) {
-  console.log('File(s) in drop zone');
-
-  ev.preventDefault();
 }
