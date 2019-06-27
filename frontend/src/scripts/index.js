@@ -19,6 +19,7 @@ function sendOnServer(type, payload) {
 }
 
 function addNewMessage(message) {
+  console.log(message.image);
   var el = document.createElement('div');
   el.innerHTML = `<li class="message_item"><div class="img_wrapper"></div><h3 class="message_nickname">${
     message.name

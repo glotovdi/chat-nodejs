@@ -37,7 +37,7 @@ webSocketServer.on('connection', function(ws) {
 });
 
 function broadcast(type, payload) {
-  clients.forEach(client => client.ws.send(JSON.stringify({ type, payload })));
+  clients.forEach(client => client.ws.send(JSON.stringify({ type: type, payload })));
 }
 
 function setName(id, payload) {
