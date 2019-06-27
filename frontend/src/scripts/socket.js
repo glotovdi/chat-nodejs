@@ -21,6 +21,9 @@ socket.onmessage = function(event) {
     case 'newMessage':
       addNewMessage(message.payload);
       return;
+    case 'history':
+      message.payload.forEach(element => addNewMessage(element));
+      return;
   }
 };
 

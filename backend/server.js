@@ -2,7 +2,7 @@ var WebSocketServer = new require('ws');
 
 // подключенные клиенты
 var clients = [];
-
+var history = [];
 // WebSocket-сервер на порту 8081
 var webSocketServer = new WebSocketServer.Server({
   port: 8081
@@ -11,10 +11,8 @@ webSocketServer.on('connection', function(ws) {
   var id = Math.random();
   clients.push({ id: id, ws: ws });
   broadcast('updateClients', clients);
-
+  ws.send(JSON.stringify({ type: 'history', payload: history }));
   ws.on('message', function(message) {
-    console.log('получено сообщение ' + message + id);
-
     message = JSON.parse(message);
     switch (message.type) {
       case 'name':
@@ -52,5 +50,6 @@ function addImage(id, payload) {
 function sendMessage(id, payload) {
   var sourceClientName = clients.find(client => client.id === id);
   var message = { ...sourceClientName, message: payload };
+  history.push(message);
   broadcast('newMessage', message);
 }

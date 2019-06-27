@@ -1,5 +1,4 @@
 function clientsRender(clients) {
-  console.log(clients);
   var content = '';
   clients.forEach(element => {
     var elementHtml = `<li class="users_item"><img class="user_avatar" src="${element.image}">${

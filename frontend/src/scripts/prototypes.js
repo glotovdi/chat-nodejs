@@ -5,7 +5,13 @@ Element.prototype.show = function() {
   this.style.display = 'block';
 };
 String.prototype.toHHMMSS = function() {
-  const date = new Date(this);
+  const dateNow = new Date(this);
 
-  return `${date.getHours()}:${date.getMinutes()}:${date.getMinutes()}`;
+  return `${checkTime(dateNow.getHours())}:${checkTime(dateNow.getMinutes())}:${checkTime(dateNow.getSeconds())}`;
 };
+function checkTime(i) {
+  if (i < 10) {
+    i = '0' + i;
+  }
+  return i;
+}
