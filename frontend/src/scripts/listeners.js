@@ -2,7 +2,7 @@ sendBtn.addEventListener('click', () => {
   if (!textarea.value) {
     return;
   }
-  sendOnServer('addNewMessage', { date: new Date(), text: textarea.value });
+  sendOnServer('addNewMessage', { date: new Date(), text: trim(textarea.value) });
   textarea.value = '';
 });
 
@@ -25,8 +25,7 @@ authBtn.addEventListener('click', () => {
   if (!nickname.value) {
     return;
   }
-  socket.send(JSON.stringify({ type: 'name', payload: nickname.value }));
-
+  socket.send(JSON.stringify({ type: 'name', payload: trim(nickname.value) }));
   authPopup.hide();
   container.show();
 });
@@ -36,3 +35,6 @@ loadPhoto.addEventListener('click', () => {
 });
 
 cancel_button.addEventListener('click', () => fileLoadPopup.hide());
+
+sendOnEnter(textarea, sendBtn);
+sendOnEnter(nickname, authBtn);

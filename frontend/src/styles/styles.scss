@@ -70,7 +70,7 @@ body {
 .button-o {
   margin: 5px;
   padding: 10px 15px;
-  background-color: #ccc;
+  background-color: #e76228;
   color: #fff;
   border: none;
   border-radius: 10px;
@@ -79,9 +79,6 @@ body {
   cursor: pointer;
 }
 
-.button-o:hover {
-  background-color: #e76228;
-}
 .message {
   height: calc(100vh - 80px);
   overflow: auto;
@@ -170,7 +167,6 @@ body {
 }
 
 .authorization__modal_input:focus {
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.008), 0 0 10px rgba(205, 92, 92, 0.6);
   outline: none;
 }
 

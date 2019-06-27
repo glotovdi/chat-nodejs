@@ -9,9 +9,3 @@ String.prototype.toHHMMSS = function() {
 
   return `${checkTime(dateNow.getHours())}:${checkTime(dateNow.getMinutes())}:${checkTime(dateNow.getSeconds())}`;
 };
-function checkTime(i) {
-  if (i < 10) {
-    i = '0' + i;
-  }
-  return i;
-}
