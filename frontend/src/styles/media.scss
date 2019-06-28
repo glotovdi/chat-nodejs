@@ -41,6 +41,7 @@
   }
   .message {
     margin-top: 80px;
+    height: calc(100vh - 140px);
   }
   .message_item {
     grid-template-columns: 50px 1fr;
@@ -50,5 +51,9 @@
   }
   .message__list {
     padding: 0 10px;
+  }
+  .message__form {
+    width: 100%;
+    bottom: 10px;
   }
 }
