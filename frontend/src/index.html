@@ -1,66 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <link rel="stylesheet" href="style.css" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
 
-    <title>Chat</title>
-  </head>
-  <body>
-    <div class="container">
-      <div class="row">
-        <div class="users">
-          <div class="users__block">
-            <div class="users__block_title">
-              <div class="users__block_img" id="loadPhoto">
-                <img class="users__block_image" src="" id="avatarImage" />
-                <span class="no_photo">No photo</span>
-              </div>
-              <h3 class="users__block_name">Добро пожаловать!</h3>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="stylesheet"
+    href="style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+    rel="stylesheet" />
+
+  <title>Chat</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="users users-hide">
+        <div class="users__arrow users__arrow-down"></div>
+        <div class="users__block">
+          <div class="users__block_title">
+            <div class="users__block_img"
+              id="loadPhoto">
+              <img class="users__block_image"
+                src=""
+                id="avatarImage" />
+              <span class="no_photo">No photo</span>
             </div>
-            <h4 id="clients_header" class="users__block_members">Участники</h4>
-            <ul class="users__block_list" id="usersList"></ul>
+            <h3 class="users__block_name">Добро пожаловать!</h3>
           </div>
+          <h4 id="clients_header"
+            class="users__block_members">Участники</h4>
+          <ul class="users__block_list"
+            id="usersList"></ul>
         </div>
-        <div class="message">
-          <div class="message__container">
-            <ul class="message__list" id="messages"></ul>
-          </div>
-          <div class="message__form">
-            <input
-              type="text"
-              name="message"
-              class="message__form_input"
-              id="messageText"
-              placeholder="Введите сообщение"
-            />
-            <button class="message__form_btn button-o" id="sendBtn">Отправить</button>
-          </div>
+      </div>
+      <div class="message">
+        <div class="message__container">
+          <ul class="message__list"
+            id="messages"></ul>
+        </div>
+        <div class="message__form">
+          <input type="text"
+            name="message"
+            class="message__form_input"
+            id="messageText"
+            placeholder="Введите сообщение" />
+          <button class="message__form_btn button-o"
+            id="sendBtn">Отправить</button>
         </div>
       </div>
     </div>
+  </div>
 
-    <div class="authorization__modal" id="authPopup">
-      <h3 class="authorization__modal_title">Авторизация</h3>
-      <div class="authorization__modal_block">
-        <input type="text" placeholder="Введите ник" class="authorization__modal_input" id="nickname" />
-        <button class="authorization__modal_btn button-o" id="authBtn">Войти</button>
+  <div class="authorization__modal"
+    id="authPopup">
+    <h3 class="authorization__modal_title">Авторизация</h3>
+    <div class="authorization__modal_block">
+      <input type="text"
+        placeholder="Введите ник"
+        class="authorization__modal_input"
+        id="nickname" />
+      <button class="authorization__modal_btn button-o"
+        id="authBtn">Войти</button>
+    </div>
+  </div>
+  <div class="fileload__modal"
+    id="fileLoadPopup">
+    <h4 class="fileload__modal_title">Загрузка фото</h4>
+    <div class="fileload__modal_block">
+      <div class="droparea"
+        id="droparea">
+        <img src=""
+          id="image"
+          class="image_input" />
+      </div>
+      <div class="fileload__modal_buttons">
+        <button class="button-o"
+          id="cancel">Отмена</button>
+        <button class="button-o"
+          id="sendPhoto">Загрузить</button>
       </div>
     </div>
-    <div class="fileload__modal" id="fileLoadPopup">
-      <h4 class="fileload__modal_title">Загрузка фото</h4>
-      <div class="fileload__modal_block">
-        <div class="droparea" id="droparea">
-          <img src="" id="image" class="image_input" />
-        </div>
-        <div class="fileload__modal_buttons">
-          <button class="button-o" id="cancel">Отмена</button>
-          <button class="button-o" id="sendPhoto">Загрузить</button>
-        </div>
-      </div>
-    </div>
-    <script async="defer" src="index.js"></script>
-  </body>
+  </div>
+  <script async="defer"
+    src="index.js"></script>
+</body>
+
 </html>

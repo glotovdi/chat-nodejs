@@ -1,6 +1,7 @@
 var socket = new WebSocket('ws://localhost:8081');
 var nickname = document.querySelector('#nickname');
 var usersList = document.querySelector('#usersList');
+var users = document.querySelector(".users")
 var loadPhoto = document.querySelector('#loadPhoto');
 var avatarImage = document.querySelector('#avatarImage');
 var authPopup = document.querySelector('#authPopup');
@@ -14,3 +15,4 @@ var sendPhoto = document.querySelector('#sendPhoto');
 var clients_header = document.querySelector('#clients_header');
 var cancel_button = document.querySelector('#cancel');
 var container = document.querySelector('.container');
+var arrow = document.querySelector('.users__arrow')

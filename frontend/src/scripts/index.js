@@ -14,21 +14,24 @@ function clientsRender(clients) {
 }
 
 function sendOnServer(type, payload) {
-  socket.send(JSON.stringify({ type, payload }));
+  socket.send(JSON.stringify({
+    type,
+    payload
+  }));
 }
 
 function addNewMessage(message) {
   console.log(message.image);
   var el = document.createElement('div');
-  el.innerHTML = `<li class="message_item"><div class="img_wrapper"></div><h3 class="message_nickname">${
+  el.innerHTML = `<li class="message_item"><div class="img_wrapper"></div><h4 class="message_nickname">${
     message.name
-  }</h3><div  class="time">${message.message.date.toHHMMSS()}</div><div> ${message.message.text}</div></li>`;
+  }</h4><div  class="time">${message.message.date.toHHMMSS()}</div><div> ${message.message.text}</div></li>`;
   if (message.image) {
     el.innerHTML = `<li class="message_item"><div class="img_wrapper"><img class="user_avatar_message" src="${
       message.image
-    }"></div><h3 class="message_nickname">${
+    }"></div><h4 class="message_nickname">${
       message.name
-    }</h3><div class="time">${message.message.date.toHHMMSS()}</div> <div>${message.message.text}</div></li>`;
+    }</h4><div class="time">${message.message.date.toHHMMSS()}</div> <div>${message.message.text}</div></li>`;
   }
   messages.appendChild(el);
 }

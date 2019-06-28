@@ -33,9 +33,9 @@ body {
 .users__block_img {
   display: flex;
   align-items: center;
-  margin-left: 10px;
-  width: 70px;
-  height: 70px;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
   border-radius: 70px;
   background-color: #f2f1f2;
   cursor: pointer;
@@ -43,7 +43,7 @@ body {
 
 .no_photo {
   display: block;
-  font-size: 18px;
+  font-size: 1rem;
   color: #2c2b2c;
   text-align: center;
   font-weight: 400;
@@ -52,19 +52,19 @@ body {
 .users__block_name {
   min-width: 150px;
   margin-left: 10px;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 700;
 }
 
 .users__block_members {
-  margin-left: 15px;
-  margin-top: 45px;
-  font-size: 14px;
+  margin-left: 0.5rem;
+  margin-top: 2rem;
+  font-size: 1rem;
 }
 
 .users__block_list {
   list-style: none;
-  font-size: 14px;
+  font-size: 1rm;
 }
 
 .button-o {
@@ -121,8 +121,9 @@ body {
 
 .authorization__modal {
   position: absolute;
-  top: 20px;
-  left: 40%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 400px;
   padding: 0.5rem 0 1rem;
   background-color: #f2f1f2;
@@ -136,6 +137,7 @@ body {
   width: 95%;
   background-color: #fff;
   border-radius: 10px;
+  text-align: center;
 }
 
 .authorization__modal_title {
@@ -160,9 +162,6 @@ body {
 }
 
 .authorization__modal_btn {
-  display: block;
-  margin-left: 300px;
-  margin-top: 45px;
   padding: 5px 10px;
 }
 
@@ -318,11 +317,12 @@ body {
   display: grid;
   border-bottom: 1px solid white;
   margin-bottom: 10px;
-  grid-template-columns: 80px 1fr;
+  grid-template-columns: 70px 1fr;
   grid-gap: 7px;
   padding: 4px;
-  grid-template-rows: min-content min-content;
+  grid-template-rows: 70px min-content;
   border-radius: 14px;
+  align-items: center;
 }
 .time {
   text-align: center;

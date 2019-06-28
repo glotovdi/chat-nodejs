@@ -6,8 +6,8 @@ var reload = browserSync.reload;
 var concat = require('gulp-concat');
 var paths = {
   html: ['src/index.html'],
-  css: ['src/styles/*.scss'],
-  script: ['src/scripts/variables/*.js','src/scripts/*.js']
+  css: ['src/styles/styles.scss', 'src/styles/media.scss'],
+  script: ['src/scripts/variables/*.js', 'src/scripts/*.js']
 };
 
 gulp.task(
@@ -29,7 +29,9 @@ gulp.task(
     return gulp
       .src(paths.html)
       .pipe(gulp.dest('dist'))
-      .pipe(reload({ stream: true }));
+      .pipe(reload({
+        stream: true
+      }));
   })
 );
 
@@ -55,7 +57,9 @@ gulp.task(
       .src(paths.script)
       .pipe(concat('index.js'))
       .pipe(gulp.dest('dist'))
-      .pipe(reload({ stream: true }));
+      .pipe(reload({
+        stream: true
+      }));
   })
 );
 

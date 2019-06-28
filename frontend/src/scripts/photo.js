@@ -6,7 +6,9 @@ dropZone.addEventListener('dragover', function(e) {
 dropZone.addEventListener('drop', function(e) {
   stopDefaultEvents(e);
   var files = e.dataTransfer.files;
-  for (var i = 0, file; (file = files[i]); i++) {
+  for (var i = 0, file;
+    (file = files[i]); i++) {
+    console.log(file)
     if (file.type.match(/image.*/)) {
       var reader = new FileReader();
 
